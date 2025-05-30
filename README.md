@@ -46,8 +46,8 @@ Este projeto é uma API RESTful desenvolvida em C# com ASP.NET Core. Ele conta c
 
 ```bash
 # Clone o repositório
-git clone https://github.com/seu-usuario/nome-do-projeto.git
-cd nome-do-projeto
+git clone https://github.com/PedroBastosBS/api-payment
+cd api-payment
 
 # Restaure dependências e execute
 dotnet restore
