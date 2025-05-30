@@ -1,4 +1,3 @@
-// PaginatedResponse.cs
 namespace PaymentService.Application.DTOs;
 
 public class PaginatedResponse<T>

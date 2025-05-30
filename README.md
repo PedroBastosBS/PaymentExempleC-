@@ -1,6 +1,8 @@
 # Projeto API ASP.NET Core
 
-Este projeto é uma API RESTful desenvolvida em C# utilizando ASP.NET Core. Ele inclui autenticação via JWT e documentação automática via Swagger.
+Este projeto é uma API RESTful desenvolvida em C# com ASP.NET Core. Ele conta com documentação automática via Swagger para facilitar o uso e teste dos endpoints.
+
+⚠️ **Atenção:** O Dockerfile ainda **não está funcional**. Execute o projeto **manualmente** conforme instruções abaixo.
 
 ---
 
@@ -9,8 +11,7 @@ Este projeto é uma API RESTful desenvolvida em C# utilizando ASP.NET Core. Ele 
 - [Tecnologias](#tecnologias)  
 - [Funcionalidades](#funcionalidades)  
 - [Pré-requisitos](#pré-requisitos)  
-- [Como rodar](#como-rodar)  
-- [Autenticação JWT](#autenticação-jwt)  
+- [Como rodar manualmente](#como-rodar-manualmente)  
 - [Documentação Swagger](#documentação-swagger)  
 - [Gitignore recomendado](#gitignore-recomendado)  
 
@@ -18,62 +19,66 @@ Este projeto é uma API RESTful desenvolvida em C# utilizando ASP.NET Core. Ele 
 
 ## Tecnologias
 
-- .NET 7 / .NET 8 (ou versão que você está usando)  
+- .NET 7 / .NET 8  
 - ASP.NET Core Web API  
-- Entity Framework Core (se usar ORM)  
+- Entity Framework Core (opcional)  
 - Swagger / Swashbuckle  
-- JWT (Json Web Tokens) para autenticação  
 
 ---
 
 ## Funcionalidades
 
-- API RESTful com endpoints para [descrição das funcionalidades da API]  
-- Autenticação via JWT  
+- Endpoints RESTful  
 - Validação e tratamento de erros  
-- Documentação interativa com Swagger UI  
+- Documentação interativa via Swagger UI  
 
 ---
 
 ## Pré-requisitos
 
-- [.NET SDK](https://dotnet.microsoft.com/download) (versão compatível com o projeto)  
+- [.NET SDK](https://dotnet.microsoft.com/download)  
 - Visual Studio ou VS Code  
 - Banco de dados configurado (se aplicável)  
 
 ---
 
-## Documentação Swagger
+## Como rodar manualmente
 
-Este projeto possui documentação interativa da API com Swagger UI, que permite:
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/nome-do-projeto.git
+cd nome-do-projeto
 
-- Visualizar todos os endpoints disponíveis  
-- Ver detalhes dos parâmetros, tipos de dados e respostas  
-- Testar as requisições diretamente no navegador  
+# Restaure dependências e execute
+dotnet restore
+dotnet run
+```
+Após rodar o comando acima, você verá uma saída semelhante no terminal:
 
-Para acessar a documentação, acesse no navegador:
+mathematica
+Copiar
+Editar
+
+Now listening on: http://localhost:5099
+Application started. Press Ctrl+C to shut down.
+
+---
+
+## Documentação da API 
+
 http://localhost:5099/swagger/index.html
-O Swagger é configurado usando o pacote `Swashbuckle.AspNetCore` e está automaticamente integrado na aplicação.
 
 ---
 
-## Gitignore recomendado
+### Configurando o banco de dados (opcional)
 
-Para evitar subir arquivos desnecessários ou que podem causar conflitos, inclua no seu `.gitignore`:
-## Dicas finais
+Se sua API utiliza um banco de dados com Entity Framework Core, siga os passos abaixo:
 
-- Sempre mantenha seu `appsettings.json` com configurações genéricas e use arquivos de ambiente (`appsettings.Development.json`, etc.) para configurações locais/sensíveis.  
-- Nunca suba senhas ou chaves secretas para o repositório público.  
-- Use variáveis de ambiente para configurar o segredo do JWT em produção.  
-- Teste a API com o Swagger antes de consumir pelo frontend.  
-- Leia a documentação do ASP.NET Core para aprofundar em segurança, middleware e boas práticas.  
+#### 1. Configure a string de conexão
 
----
+No arquivo `appsettings.Development.json` (ou `appsettings.json`), ajuste a string de conexão com o seu banco de dados:
 
-## Contato
-
-Se precisar de ajuda ou quiser contribuir, abra issues ou pull requests no repositório.
-
----
-
-**Boa sorte no projeto! 🚀**
+```json
+"ConnectionStrings": {
+  "DefaultConnection": "Server=localhost;Database=MeuBanco;User Id=meu-usuario;Password=minha-senha;"
+}
