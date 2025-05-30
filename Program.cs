@@ -6,6 +6,7 @@ using PaymentService.Domain.Factories;
 using PaymentService.Domain.Interfaces;
 using PaymentService.Infrastructure.Persistence;
 using PaymentService.Infrastructure.Repositories;
+using PaymentService.Domain.Strategies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +17,15 @@ builder.Services.AddScoped<IPlanRepository, PlanRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IPlanFactory, PlanFactory>();
 builder.Services.AddScoped<IUserFactory, UserFactory>();
+
+builder.Services.AddTransient<TicketStrategy>();
+builder.Services.AddTransient<PixStrategy>();
+builder.Services.AddTransient<CreditCardStrategy>();
+
+builder.Services.AddScoped<IPaymentStrategyFactory, PaymentStrategyFactory>();
+builder.Services.AddScoped<IStrategyPayment, CreditCardStrategy>();
+builder.Services.AddScoped<IStrategyPayment, PixStrategy>();
+
 
 builder.Services.AddEndpointsApiExplorer();
 
