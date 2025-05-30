@@ -1,8 +1,8 @@
 using PaymentService.Application.DTOs;
 using PaymentService.Domain.Interfaces;
 
-namespace PaymentService.Application.UseCases;
-
+namespace PaymentService.Application.UseCases
+{
 public class GetAllPlansUseCase : IGetAllPlansUseCase
 {
     private readonly IPlanRepository _planRepository;
@@ -30,4 +30,5 @@ public class GetAllPlansUseCase : IGetAllPlansUseCase
             PageSize = request.PageSize
         };
     }
+}
 }

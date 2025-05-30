@@ -11,8 +11,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddScoped<ICreatePlanUseCase, CreatePlanUseCase>();
 builder.Services.AddScoped<IGetAllPlansUseCase, GetAllPlansUseCase>();
+builder.Services.AddScoped<IUserRegistrationUseCase, UserRegistrationUseCase>();
 builder.Services.AddScoped<IPlanRepository, PlanRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IPlanFactory, PlanFactory>();
+builder.Services.AddScoped<IUserFactory, UserFactory>();
 
 builder.Services.AddEndpointsApiExplorer();
 
@@ -43,7 +46,8 @@ builder.Services.AddSwaggerGen(c =>
 
 builder.Services.AddDbContext<PaymentDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
-
+builder.Services.AddDbContext<UserDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddControllers();
 
 var app = builder.Build();

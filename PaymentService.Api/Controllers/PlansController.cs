@@ -6,7 +6,7 @@ namespace PaymentService.Api.Controllers
 {
     [ApiController]
     [Route("api/plans")]
-    [Tags("Listagem de Planos")]
+    [Tags("Rotas de planos")]
     public class PlansController : ControllerBase
     {
         private readonly ICreatePlanUseCase _createPlanUseCase;

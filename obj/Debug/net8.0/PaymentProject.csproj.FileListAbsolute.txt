@@ -218,3 +218,9 @@ C:\Users\pedro.silva\Documents\PaymentService\PaymentProject\bin\Debug\net8.0\zh
 C:\Users\pedro.silva\Documents\PaymentService\PaymentProject\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\pedro.silva\Documents\PaymentService\PaymentProject\bin\Debug\net8.0\PaymentProject.xml
 C:\Users\pedro.silva\Documents\PaymentService\PaymentProject\obj\Debug\net8.0\PaymentProject.xml
+C:\Users\pedro.silva\Documents\PaymentService\PaymentProject\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\pedro.silva\Documents\PaymentService\PaymentProject\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\pedro.silva\Documents\PaymentService\PaymentProject\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\pedro.silva\Documents\PaymentService\PaymentProject\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\pedro.silva\Documents\PaymentService\PaymentProject\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\pedro.silva\Documents\PaymentService\PaymentProject\obj\Debug\net8.0\PaymentProject.sourcelink.json
